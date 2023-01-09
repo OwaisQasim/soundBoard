@@ -8,8 +8,17 @@ sounds.forEach(sound => {
     btn.classList.add('btn')
 
     btn.addEventListener('click', () => {
+        stopSong()
         document.getElementById(sound).play()
     })
 
 })
+
+function stopSong() {
+    sounds.forEach(sound => {
+        const song = document.getElementById(sound)
+        song.pause()
+        song.currentTime = 0;
+    })
+}
 
